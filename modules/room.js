@@ -82,6 +82,7 @@ module.exports.createRoom = (req, res, next)=>{
            bookingFlag='no'
           }    
           else if (data.startTime > req.body.bookinginfo.startTime  &&  data.startTime < req.body.bookinginfo.endTime)
+            
           {
             console.log("time 2")
             bookingFlag='no'
