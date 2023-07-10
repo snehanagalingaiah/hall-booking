@@ -77,7 +77,7 @@ module.exports.createRoom = (req, res, next)=>{
         
           if (new Date(req.body.bookinginfo.date).getTime() ===  new Date(data.date).getTime())  
           {
-           if (data.startTime < req.body.bookinginfo.startTime  && req.body.bookinginfo.startTime < data.endTime)
+           if (data.startTime <= req.body.bookinginfo.startTime  && req.body.bookinginfo.startTime <= data.endTime)
            {
              console.log("time 1")
              bookingFlag='no'
@@ -86,12 +86,6 @@ module.exports.createRoom = (req, res, next)=>{
     
           {
             console.log("time 2")
-            bookingFlag='no'
-          }
-
-           else if (data.startTime = req.body.bookinginfo.startTime && data.endTime >= req.body.bookinginfo.endTime)
-           {
-            console.log("time 3")
             bookingFlag='no'
           }
        }
